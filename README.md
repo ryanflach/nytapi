@@ -35,7 +35,7 @@ The title, author, date published, abstract, and URL are printed out to the term
 Example:
 
 ```
-ruby top_stories.rb world
+$ruby top_stories.rb world
 
 Title: Gone: Global Warming Claims a Lake — and a Way of Life
 	By SUSAN LEHMAN
