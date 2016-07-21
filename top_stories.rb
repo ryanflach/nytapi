@@ -1,6 +1,7 @@
 require 'faraday'
 require 'json'
 require './key'
+require 'date'
 
 class TopStories
   attr_reader :category
@@ -40,10 +41,14 @@ class TopStories
     collect_headlines.each do |story|
       puts "Title: #{story[:title]}"
       puts "\t#{story[:author]}"
-      puts "Published: #{story[:published]}"
+      puts "Published: #{format_date(story[:published])}"
       puts story[:abstract]
       puts "#{story[:url]}\n\n"
     end
+  end
+
+  def format_date(html)
+    DateTime.parse(html).strftime('%B %d, %Y')
   end
 
   def valid_category?
